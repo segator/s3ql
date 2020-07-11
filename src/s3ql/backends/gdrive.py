@@ -115,7 +115,7 @@ class Backend(AbstractBackend, metaclass=ABCDocstMeta):
             elif exc.resp.status >= 500 or exc.resp.status == 400 or exc.resp.status == 408:
                 return True
         elif isinstance(exc,(BrokenPipeError,ConnectionResetError,socket.gaierror,socket.herror,socket.timeout,http.client.IncompleteRead,
-        httplib2.ServerNotFoundError,ssl.SSLZeroReturnError, ssl.SSLEOFError,ssl.SSLSyscallError,ssl.SSLError)):
+        httplib2.ServerNotFoundError,ssl.SSLZeroReturnError, ssl.SSLEOFError,ssl.SSLSyscallError,ssl.SSLError,TimeoutError)):
             return True
         return False
 
