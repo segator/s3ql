@@ -205,7 +205,7 @@ class Backend(AbstractBackend, metaclass=ABCDocstMeta):
         if folder is None:
             folder = {'id': 'root', 'path': '/', 'mimeType': Backend.MIME_TYPE_FOLDER}
 
-        folderContext = self._get_object_folder_id(name)
+        folderContext = self._get_object_folder_id(name,folder)
 
 
         # iterate over folder children
